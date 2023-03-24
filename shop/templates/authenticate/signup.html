@@ -1,0 +1,76 @@
+{% extends  'shop/basic.html' %}
+{% block body %}
+{% load static %}
+
+<!-- Sign UP -->
+  <div class="registration-form">
+      <section>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-icon">
+                <span><i class="icon icon-user"></i></span>
+            </div>
+			<!-- First and Last name -->
+			<div class="row">
+			  <div class="col-6">
+			   <div class="form-group">
+                <input type="text" class="form-control item" id="firstname" placeholder="Firstname" name="first_name">
+               </div>
+			  </div>
+			  <div class="col-6">
+			   <div class="form-group">
+                <input type="text" class="form-control item" id="lastname" placeholder="Lastname" name="last_name">
+               </div>
+			  </div>
+			</div>
+			<!-- End of First and Last name -->
+            <div class="form-group">
+                <input type="text" class="form-control item" id="username" placeholder="Username" name="username">
+            </div>
+            <!-- Profile Photo -->
+            <div class="input-group">
+                          <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="myfiles">
+            </div>
+            <!-- End of Profile Photo -->
+            <div class="form-group">
+                <input type="password" class="form-control item" id="password" placeholder="Password" name="password">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="email" placeholder="Email" name="email">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control item" id="phone-number" placeholder="Phone Number" name="phone">
+            </div>
+			<div class="form-group">
+                <input type="text" class="form-control item" id="mobile-number" placeholder="Mobile Number" name="mobile">
+            </div>
+			<!-- Age -->
+			<div class="form-group">
+                <input type="text" class="form-control item" id="age" placeholder="Age" name="age">
+            </div>
+
+			<!-- End of Age -->
+
+            <div class="form-group">
+                <input type="text" class="form-control item" id="address" placeholder="address" name="address">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-block create-account">Create Account</button>
+            </div>
+
+
+        </form>
+          </section>
+        <div class="social-media">
+            <h5>Sign up with social media</h5>
+            <div class="social-icons">
+                <a href="#"><i class="icon-social-facebook" title="Facebook"></i></a>
+                <a href="#"><i class="icon-social-google" title="Google"></i></a>
+                <a href="#"><i class="icon-social-twitter" title="Twitter"></i></a>
+            </div>
+        </div>
+    </div>
+  <!-- End of Signup -->
+
+{% endblock %}

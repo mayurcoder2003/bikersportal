@@ -1,0 +1,104 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} {{product.product_name}} - My Awesome Cart{% endblock %}
+{% block body %}
+
+
+<!-- Product View -->
+<!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details" style="margin-top:100px">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper-container">
+              <div class="swiper-wrapper align-items-center">
+
+
+
+                <div class="swiper-slide">
+                  <img src="/media/{{product.image}}" height="696" width="391.5">
+                </div>
+
+
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>{{product.product_name}}</h3>
+              <ul>
+                <li><strong>Category</strong>: {{ product.category }}</li>
+                <li><strong>Brand</strong>: {{ product.subcategory }}</li>
+                <li><strong>published date</strong>: {{ product.pub_date }}</li>
+                <li><strong>Product Price</strong>: Rs{{ product.price }}</li>
+                <li><strong>Phone No.</strong>: +123 456 789<a href="#"></a></li> <!-- Make a field for Phone No. in models -->
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2>Description</h2>
+              <p>
+               {{product.desc}}
+              </p>
+                 <div class="row">
+                     <div class="col-12">
+                       <a href="{% url 'shop:booknow' pk=product.pk %}" class="btn btn-primary mx-3">Buy Now</a>
+                     </div>
+
+                </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+<!-- End of Product View -->
+
+
+
+{% endblock %}
+
+
+
+
+{% block js %}
+<script>
+console.log('working');
+
+if(localStorage.getItem('cart') == null){
+var cart = {};
+}
+
+else
+{
+cart = JSON.parse(localStorage.getItem('cart'));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+}
+
+$('.cart').click(function(){
+
+console.log('clicked');
+var idstr = this.id.toString();
+console.log(idstr);
+if (cart[idstr] !=undefined){
+cart[idstr] = cart[idstr] + 1;
+}
+else
+{
+cart[idstr] = 1;
+}
+console.log(cart);
+localStorage.setItem('cart', JSON.stringify(cart));
+document.getElementById('cart').innerHTML = Object.keys(cart).length;
+});
+$('#popcart').popover();
+
+document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+
+</script>
+{% endblock %}

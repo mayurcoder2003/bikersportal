@@ -1,0 +1,61 @@
+{% extends 'shop/basic.html' %}
+{% block body %}
+{% load static %}
+
+<!-- Customer Details -->
+  <section class="container mt-5 pr-5">
+   <div class="row justify-content-center">
+   <!-- Title -->
+   <div class="text-center mb-5">
+     <h2> My Profile </h2>
+   </div>
+   <!-- End of title -->
+    <div class="col-12">
+	<!-- 2 rows made for Details and image -->
+	 <div class="row">
+
+	  <!-- Text detail -->
+	  <div class="col-8 justify-content-between"><form method="post">
+	   <h2 class="font-weight-bold">Profile Details - </h2>
+	   <p class="m-4"><b class="">Name - </b></br>
+	   <i><input type="text" class="form-control" name="name" value="{{ user.first_name }}"> </i></p>
+
+	   <p class="m-4"><b class=""> Phone - </b></br>
+	   <i><input type="text"  class="form-control" name="phone" value="{{ user.user_content.phone }}"></i></p>
+
+		  <p class="m-4"><b class=""> Mobile - </b></br>
+	   <i><input type="text" class="form-control" name="mobile" value="{{ user.user_content.mobile }}"></i></p>
+
+		  <p class="m-4"><b class=""> Email- </b></br>
+	   <i> <input type="text"  class="form-control" name="email" value="{{ user.user_content.email }}"> </i></p>
+
+		  <p class="m-4"><b class=""> Age - </b></br>
+	   <i> <input type="text"  class="form-control" name="age" value="{{ user.user_content.age }}"> </i></p>
+
+		  <p class="m-4"><b class=""> Address - </b></br>
+			  <i> <input type="text" class="form-control" name="address" value="{{ user.user_content.address }}"> </i></p>
+
+		  <input type="submit" value="Save" class="btn btn-primary">
+		  {% csrf_token %}
+		 </form>
+	  </div>
+
+	  <!-- End of text detail -->
+	  <!-- Profile Image -->
+	  <div class="col-4">
+	     <img src="{{ user.user_content.image.url }}" class="img-fluid photo-height">
+	  </div>
+	  <!-- End of Profile Image -->
+
+
+	 </div>
+	<!-- End of 2 rows made for Details and image -->
+
+
+
+	</div>
+   </div>
+  </section>
+  <!-- End of Customer Details -->
+
+{% endblock %}
