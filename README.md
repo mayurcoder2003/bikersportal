@@ -3,9 +3,9 @@
 
 #### One-stop Solution for Bikers that are Build Using HTML, CSS,  Javascript, Python, Php, and MySql DataBase.
 
-	• The Bickers Portal covers all the areas required for an  Automobile dealer including Spares parts Inventory, Workshop/Service Station Management(our mechanic).
-	• The Bicker Portal is best suited for automobile deals of LCVs,  HCV, Two wheelers, ASC & Authorized Spare part dealers. 
-	• The Bickers Portal is developed to manage the automobiles in the automobile dealer company
+• The Bickers Portal covers all the areas required for an  Automobile dealer including Spares parts Inventory, Workshop/Service Station Management(our mechanic).
+• The Bicker Portal is best suited for automobile deals of LCVs,  HCV, Two wheelers, ASC & Authorized Spare part dealers. 
+• The Bickers Portal is developed to manage the automobiles in the automobile dealer company
   
 ![05324c62-fafb-47c1-9c72-fe64eaf33207](https://user-images.githubusercontent.com/128782100/227590979-633c47dd-ddd9-4d61-8f06-cae4ff52f071.jpg)
 
